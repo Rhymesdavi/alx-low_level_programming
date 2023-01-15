@@ -1,65 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
+
 /**
- * _strlen - count array
- * @s: array of elements
+ * _strdup - duplicate to new memory space location
+ * @str: char
  *
- * REturn: 1
- */
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] = '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-/**
- * _strcpy - copy arrays
- * @src: array of elements
- * @dest: dest array
- * Return: dest
- */
-
-char *strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-
-	return (dest);
-}
-/**
- * _strdup - array to print a string 
- * @str: array of elements
- *
- * Return: pointer
+ * Return: 0
  */
 char *_strdup(char *str)
 {
-	char *dst;
-	unsigned int size;
 
-	if (str == 0)
-	{
+	char *aaa;
+	int i, r = 0;
+
+	if (str == NULL)
 		return (NULL);
-	}
 
-	size = _strlen(str) + 1;
+	i = 0;
+	while (str[i] != '\0')
+		i++;
 
-	dst = (char *) malloc(size *sizeof(char));
-	
-	if (dst == 0)
-	{
+	aaa = malloc(sizeof(char) * (i + 1));
+
+	if (aaa == NULL)
 		return (NULL);
-	}
-	_strcpy(dst, str);
-	return (dst);
+
+	for (r = 0; str[r]; r++)
+		aaa[r] = str[r];
+
+	return (aaa);
+
 }
