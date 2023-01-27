@@ -1,0 +1,1 @@
+Documenting Variadic Functions
